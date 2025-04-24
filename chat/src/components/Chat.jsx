@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Message } from "./Message";
 
-export const Chat = ({ chatId, closeChat, messages, sendMessage }) => {
+export const Chat = ({ chatId, user, closeChat, messages, sendMessage }) => {
     const [message, setMessage] = useState("");
 
     const onSendMessage = () => {
-        sendMessage(message);
+        sendMessage(chatId, message);
         setMessage("");
     };
 
